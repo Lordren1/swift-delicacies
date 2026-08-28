@@ -3,13 +3,16 @@ import styles from './page.module.css';
 import MealsGrid from '@/components/meals/meals-grid';
 import MealsLoading from '@/components/meals/meals-loading';
 import { getMeals } from '@/lib/meals';
+import { verifyAuth } from '@/lib/auth';
+
 
 async function Meals() {
-  const meals = await getMeals();
+  const { user } = await verifyAuth();
+  const meals = await getMeals(user?.id);
 
   return (
     <>
-      <MealsGrid meals={meals} />
+      <MealsGrid meals={meals} currentUserId={user?.id} />
     </>
   );
 }

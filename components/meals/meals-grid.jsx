@@ -2,7 +2,7 @@ import MealItem from "./meal-item";
 import styles from './meals-grid.module.css'
 
 
-export default function MealsGrid({ meals }) {
+export default function MealsGrid({ meals, currentUserId }) {
 
 
   return (
@@ -10,10 +10,10 @@ export default function MealsGrid({ meals }) {
       <ul className={styles.meals}>
         {meals.map(meal => (
           <li key={meal.id}>
-            <MealItem {...meal} />
+            <MealItem {...meal} currentUserId={currentUserId} />
           </li>
         ))}
       </ul>
     </>
-  )
+  );
 }

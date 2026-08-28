@@ -1,0 +1,90 @@
+.form {
+  max-width: 32rem;
+  margin: 1.5rem auto;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(90deg, #2c1e19, #25200f);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+  color: #ddd6cb;
+}
+
+.form h2 {
+  margin-top: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.avatarPreview {
+  margin-bottom: 1rem;
+}
+
+.avatarPreview img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.row .control {
+  flex: 1;
+}
+
+.control {
+  margin-bottom: 1.5rem;
+}
+
+.control label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #cfa69b;
+}
+
+.control input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(221, 214, 203, 0.2);
+  border-radius: 0.5rem;
+  background: rgba(221, 214, 203, 0.05);
+  color: #ddd6cb;
+  font-family: inherit;
+}
+
+.control input:focus {
+  outline: none;
+  border-color: #f9572a;
+}
+
+.submit {
+  padding: 0.65rem 1.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, #f9572a, #ff9b05);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success {
+  margin-top: 1rem;
+  color: #7fd88f;
+  font-size: 0.9rem;
+}
+
+.errors {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 60, 60, 0.1);
+  border: 1px solid rgba(255, 60, 60, 0.3);
+  color: #ff8b8b;
+  list-style: none;
+}

@@ -2,13 +2,13 @@ const { DatabaseSync } = require('node:sqlite');
 const db = new DatabaseSync('meals.db');
 
 const dummyMeals = [
-  {
-    title: 'Jollof Rice',
-    slug: 'jollof-rice',
-    image: '/images/jollof-rice.jpg',
-    summary:
-      'Smoky, tomato-rich party rice cooked to perfection with peppers and spices — a Nigerian classic.',
-    instructions: `
+   {
+      title: 'Jollof Rice',
+      slug: 'jollof-rice',
+      image: '/images/jollof-rice.jpg',
+      summary:
+         'Smoky, tomato-rich party rice cooked to perfection with peppers and spices — a Nigerian classic.',
+      instructions: `
       1. Blend the base:
          Blend tomatoes, red bell peppers, scotch bonnet, and onions into a smooth puree.
 
@@ -24,16 +24,16 @@ const dummyMeals = [
       5. Serve:
          Fluff the rice once tender and serve hot with fried plantain and grilled chicken.
     `,
-    creator: 'Amaka Okafor',
-    creator_email: 'amakaokafor@example.com',
-  },
-  {
-    title: 'Egusi Soup',
-    slug: 'egusi-soup',
-    image: '/images/egusi-soup.jpg',
-    summary:
-      'A hearty melon seed soup loaded with assorted meat, fish, and leafy greens.',
-    instructions: `
+      creator: 'Amaka Okafor',
+      creator_email: 'amakaokafor@example.com',
+   },
+   {
+      title: 'Egusi Soup',
+      slug: 'egusi-soup',
+      image: '/images/egusi-soup.jpg',
+      summary:
+         'A hearty melon seed soup loaded with assorted meat, fish, and leafy greens.',
+      instructions: `
       1. Prepare the egusi:
          Blend ground melon seeds with a little water to form a paste.
 
@@ -49,16 +49,16 @@ const dummyMeals = [
       5. Serve:
          Serve hot with pounded yam, eba, or fufu.
     `,
-    creator: 'Chidi Nwosu',
-    creator_email: 'chidinwosu@example.com',
-  },
-  {
-    title: 'Suya',
-    slug: 'suya',
-    image: '/images/suya.jpg',
-    summary:
-      'Spicy grilled skewered beef coated in a peanut-based suya spice blend, a beloved Nigerian street food.',
-    instructions: `
+      creator: 'Chidi Nwosu',
+      creator_email: 'chidinwosu@example.com',
+   },
+   {
+      title: 'Suya',
+      slug: 'suya',
+      image: '/images/suya.jpg',
+      summary:
+         'Spicy grilled skewered beef coated in a peanut-based suya spice blend, a beloved Nigerian street food.',
+      instructions: `
       1. Prepare the suya spice:
          Mix roasted ground peanuts, ground ginger, cayenne pepper, paprika, garlic powder, and stock cubes.
 
@@ -74,16 +74,16 @@ const dummyMeals = [
       5. Serve:
          Serve hot with sliced onions, tomatoes, and extra suya spice on the side.
     `,
-    creator: 'Musa Ibrahim',
-    creator_email: 'musaibrahim@example.com',
-  },
-  {
-    title: 'Moi Moi',
-    slug: 'moi-moi',
-    image: '/images/moi-moi.jpg',
-    summary:
-      'Steamed savory bean pudding made from blended black-eyed peas, peppers, and spices.',
-    instructions: `
+      creator: 'Musa Ibrahim',
+      creator_email: 'musaibrahim@example.com',
+   },
+   {
+      title: 'Moi Moi',
+      slug: 'moi-moi',
+      image: '/images/moi-moi.jpg',
+      summary:
+         'Steamed savory bean pudding made from blended black-eyed peas, peppers, and spices.',
+      instructions: `
       1. Prepare the beans:
          Soak and peel black-eyed peas, then blend with peppers, onions, and a little water into a smooth batter.
 
@@ -99,16 +99,16 @@ const dummyMeals = [
       5. Serve:
          Serve warm on its own or alongside jollof rice.
     `,
-    creator: 'Ngozi Eze',
-    creator_email: 'ngozieze@example.com',
-  },
-  {
-    title: 'Puff-Puff',
-    slug: 'puff-puff',
-    image: '/images/puff-puff.jpg',
-    summary:
-      'Sweet, fluffy deep-fried dough balls, golden on the outside and soft inside.',
-    instructions: `
+      creator: 'Ngozi Eze',
+      creator_email: 'ngozieze@example.com',
+   },
+   {
+      title: 'Puff-Puff',
+      slug: 'puff-puff',
+      image: '/images/puff-puff.jpg',
+      summary:
+         'Sweet, fluffy deep-fried dough balls, golden on the outside and soft inside.',
+      instructions: `
       1. Make the batter:
          Mix flour, sugar, yeast, nutmeg, and salt, then whisk in warm water until smooth.
 
@@ -124,16 +124,16 @@ const dummyMeals = [
       5. Serve:
          Serve warm as a snack, plain or dusted with sugar.
     `,
-    creator: 'Funke Adebayo',
-    creator_email: 'funkeadebayo@example.com',
-  },
-  {
-    title: 'Akara',
-    slug: 'akara',
-    image: '/images/akara.jpg',
-    summary:
-      'Crispy deep-fried bean cakes made from blended black-eyed peas, a popular breakfast favorite.',
-    instructions: `
+      creator: 'Funke Adebayo',
+      creator_email: 'funkeadebayo@example.com',
+   },
+   {
+      title: 'Akara',
+      slug: 'akara',
+      image: '/images/akara.jpg',
+      summary:
+         'Crispy deep-fried bean cakes made from blended black-eyed peas, a popular breakfast favorite.',
+      instructions: `
       1. Prepare the beans:
          Soak and peel black-eyed peas, then blend with onions and pepper into a thick, fluffy batter.
 
@@ -149,16 +149,16 @@ const dummyMeals = [
       5. Serve:
          Serve hot with pap (akamu) or bread.
     `,
-    creator: 'Tunde Bakare',
-    creator_email: 'tundebakare@example.com',
-  },
-  {
-    title: 'Pepper Soup',
-    slug: 'pepper-soup',
-    image: '/images/pepper-soup.jpg',
-    summary:
-      'A light, fiery, aromatic soup made with catfish or goat meat and traditional pepper soup spice.',
-    instructions: `
+      creator: 'Tunde Bakare',
+      creator_email: 'tundebakare@example.com',
+   },
+   {
+      title: 'Pepper Soup',
+      slug: 'pepper-soup',
+      image: '/images/pepper-soup.jpg',
+      summary:
+         'A light, fiery, aromatic soup made with catfish or goat meat and traditional pepper soup spice.',
+      instructions: `
       1. Season the meat:
          Season goat meat or catfish with salt, onions, and stock cubes, then boil until tender.
 
@@ -174,42 +174,123 @@ const dummyMeals = [
       5. Serve:
          Serve hot in a bowl as a starter or light meal.
     `,
-    creator: 'Blessing Okon',
-    creator_email: 'blessingokon@example.com',
-  },
+      creator: 'Blessing Okon',
+      creator_email: 'blessingokon@example.com',
+   },
 ];
 
 db.exec(`
+   CREATE TABLE IF NOT EXISTS users (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   username TEXT NOT NULL UNIQUE,
+   first_name TEXT,
+   last_name TEXT,
+   email TEXT NOT NULL UNIQUE,
+   password_hash TEXT,
+   profile_image TEXT
+   )
+   `);
+
+db.exec(`
    CREATE TABLE IF NOT EXISTS meals (
-       id INTEGER PRIMARY KEY AUTOINCREMENT,
-       slug TEXT NOT NULL UNIQUE,
-       title TEXT NOT NULL,
-       image TEXT NOT NULL,
-       summary TEXT NOT NULL,
-       instructions TEXT NOT NULL,
-       creator TEXT NOT NULL,
-       creator_email TEXT NOT NULL
-    )
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      slug TEXT NOT NULL UNIQUE,
+      title TEXT NOT NULL,
+      image TEXT NOT NULL,
+      summary TEXT NOT NULL,
+      instructions TEXT NOT NULL,
+      creator TEXT NOT NULL,
+      creator_email TEXT NOT NULL,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP
+   )
 `);
 
-function initData() {
-  const stmt = db.prepare(
-    `INSERT INTO meals VALUES (
-         null,
-         @slug,
-         @title,
-         @image,
-         @summary,
-         @instructions,
-         @creator,
-         @creator_email
-      )`,
-    { allowBareNamedParameters: true }
-  );
 
-  for (const meal of dummyMeals) {
-    stmt.run(meal);
-  }
+
+db.exec(`
+   CREATE TABLE IF NOT EXISTS comments (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      meal_id INTEGER NOT NULL,
+      user_id INTEGER NOT NULL,
+      content TEXT NOT NULL,
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (meal_id) REFERENCES meals(id) ON DELETE CASCADE,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+   )   
+`);
+
+db.exec(`
+   CREATE TABLE IF NOT EXISTS likes (
+      user_id INTEGER,
+      meal_id INTEGER,
+      PRIMARY KEY (user_id, meal_id),
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+      FOREIGN KEY (meal_id) REFERENCES meals(id) ON DELETE CASCADE
+   )
+`);
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS views (
+   user_id INTEGER,
+   meal_id INTEGER,
+   viewed_at TEXT DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY (user_id, meal_id),
+   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+   FOREIGN KEY (meal_id) REFERENCES meals(id) ON DELETE CASCADE
+  )    
+`);
+
+
+db.exec(`
+   CREATE TABLE IF NOT EXISTS sessions (
+   id TEXT PRIMARY KEY,
+   user_id INTEGER NOT NULL,
+   expires_at INTEGER NOT NULL,
+   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+   )
+`);
+
+function initUsers() {
+   const stmt = db.prepare('SELECT COUNT(*) AS count FROM users');
+
+   if (stmt.get().count === 0) {
+      const insertUser = db.prepare(`
+         INSERT INTO users (username, first_name, last_name, email)
+         VALUES (@username, @first_name, @last_name, @email)
+      `);
+
+      const dummyUsers = [
+         { username: 'johndoe', first_name: 'John', last_name: 'Doe', email: 'john@example.com' },
+         { username: 'maxschwarz', first_name: 'Max', last_name: 'Schwarz', email: 'max@example.com' },
+      ];
+
+      for (const user of dummyUsers) {
+         insertUser.run(user);
+      }
+   }
+}
+
+initUsers();
+
+
+
+function initData() {
+   const stmt = db.prepare('SELECT COUNT(*) AS count FROM meals');
+
+   if (stmt.get().count === 0) {
+      const insertMeal = db.prepare(
+         `INSERT INTO meals (slug, title, image, summary, instructions, creator, creator_email)
+       VALUES (@slug, @title, @image, @summary, @instructions, @creator, @creator_email)`,
+         { allowBareNamedParameters: true }
+      );
+
+      for (const meal of dummyMeals) {
+         insertMeal.run(meal);
+      }
+   }
 }
 
 initData();
+
+

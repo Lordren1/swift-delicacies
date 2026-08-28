@@ -5,22 +5,14 @@
   padding: 2rem 1rem;
 }
 
-@media (min-width: 768px) {
-  .header {
-    padding: 2rem 10%;
-  }
-}
-
 .nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: 1.5rem;
-  /* font-family: 'Montserrat', sans-serif; */
   font-size: 1.25rem;
 }
-
 
 .logo {
   display: flex;
@@ -36,9 +28,52 @@
   font-size: 1.5rem;
 }
 
-/* .logo img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: contain;
-  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
-} */
+/* components/main-header/main-header.module.css */
+.logoutBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+
+  color: #ddd6cb;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logoutBtn:hover {
+  color: #f9572a;
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 2rem 10%;
+  }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 767px) {
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+}

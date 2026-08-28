@@ -29,6 +29,7 @@ body {
   color: #262626;
   text-transform: uppercase;
   background: linear-gradient(90deg, #f9572a, #ffc905);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: cover;
@@ -41,4 +42,8 @@ body {
   font-size: 1.5rem;
   font-weight: 500;
   color: #ddd8d8;
+}
+
+html {
+  scroll-behavior: smooth;
 }

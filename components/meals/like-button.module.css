@@ -1,0 +1,23 @@
+/* components/meals/like-button.module.css */
+.like {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(221, 214, 203, 0.3);
+  background: transparent;
+  color: #ddd6cb;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.like:hover {
+  background: rgba(221, 214, 203, 0.08);
+}
+
+.liked {
+  border-color: #f9572a;
+  color: #f9572a;
+}

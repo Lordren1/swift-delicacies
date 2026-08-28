@@ -34,6 +34,51 @@
   text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
 }
 
+.creatorRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+}
+
+.creatorLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #ddd6cb;
+  font-weight: bold;
+}
+
+.creatorLink:hover {
+  color: #f9b241;
+}
+
+.creatorAvatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.creatorAvatarPlaceholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f9572a, #ff9b05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.creatorMeta {
+  color: #cfa69b;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
 .creator {
   font-size: 1.5rem;
   color: #cfa69b;
@@ -58,6 +103,10 @@
 
 .summary {
   font-size: 1.5rem;
+}
+
+.comment {
+  margin-left: 1.5rem;
 }
 
 .instructions {
