@@ -1,59 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Swift Delicacies
+
+A full-stack meal-sharing application built with **Next.js**, **Supabase**, and **Cloudinary**. Users can browse meals, view meal details, and share their own recipes with images.
+
+## Tech Stack
+
+* **Next.js** — React framework and application routing
+* **React** — User interface
+* **Supabase** — Database and authentication
+* **Cloudinary** — Meal image storage and delivery
+* **JavaScript** — Application logic
+* **CSS** — Styling
+
+## Features
+
+* Browse available meals
+* View individual meal details
+* Share new meals and recipes
+* Upload and display meal images with Cloudinary
+* Store meal data in Supabase
+* User authentication
+* Responsive interface
+* Server-side data handling with Next.js
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
 
-Clone the repository:
 ```bash
-   git clone https://github.com/Lordren1/swift-delicacies
-   cd swift-delicacies
+git clone https://github.com/Lordren1/swift-delicacies.git
+cd swift-delicacies
 ```
 
-Install dependencies:
+### 2. Install dependencies
+
 ```bash
-   npm install
+npm install
 ```
 
-Create a `.env.local` file with the following variables:
+### 3. Configure environment variables
+
+Create a `.env.local` file in the root of the project:
+
+```env
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
+
 SUPABASE_URL=your_supabase_project_url
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+```
 
+Replace the placeholder values with your actual Cloudinary and Supabase credentials.
 
-Database tables are already set up on Supabase — no local setup needed. (If setting up a fresh Supabase project, run the SQL schema in `supabase/schema.sql` via the Supabase SQL Editor.)
- 
+**Important:** Never commit `.env.local` or expose your Supabase service role key publicly.
+
+### 4. Set up Supabase
+
+The application uses Supabase as its database, so no local database installation is required.
+
+If you are setting up the project with a new Supabase project:
+
+1. Create a project in Supabase.
+2. Open the **SQL Editor**.
+3. Run the schema located at:
+
+```text
+supabase/schema.sql
+```
+
+This will create the required database tables.
+
+### 5. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application will automatically reload when you make changes.
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+swift-delicacies/
+├── app/
+├── components/
+├── lib/
+├── public/
+├── supabase/
+│   └── schema.sql
+├── .env.local
+├── package.json
+└── README.md
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The application can be deployed to **Vercel**.
 
-## Deploy on Vercel
+Before deploying, add the same environment variables from `.env.local` to your Vercel project's **Environment Variables** settings.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Then deploy the project from your GitHub repository.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# trigger redeploy
+## Environment Variables
+
+| Variable                    | Purpose                               |
+| --------------------------- | ------------------------------------- |
+| `CLOUDINARY_CLOUD_NAME`     | Cloudinary cloud name                 |
+| `CLOUDINARY_API_KEY`        | Cloudinary API key                    |
+| `CLOUDINARY_API_SECRET`     | Cloudinary API secret                 |
+| `SUPABASE_URL`              | Supabase project URL                  |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase server-side service role key |
+
+## License
+
+This project is for learning and development purposes.
