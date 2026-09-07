@@ -4,6 +4,23 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 First, run the development server:
 
+Clone the repository:
+```bash
+   git clone https://github.com/Lordren1/swift-delicacies
+   cd swift-delicacies
+```
+
+Install dependencies:
+```bash
+   npm install
+```
+
+Initialize the database with seed/initial data:
+```bash
+   node initdb.js
+```
+> **Note:** This step is required before running the app for the first time — it sets up the initial data needed for the project to function correctly.
+
 ```bash
 npm run dev
 # or
