@@ -15,11 +15,16 @@ Install dependencies:
    npm install
 ```
 
-Initialize the database with seed/initial data:
-```bash
-   node initdb.js
-```
-> **Note:** This step is required before running the app for the first time — it sets up the initial data needed for the project to function correctly.
+Create a `.env.local` file with the following variables:
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+SUPABASE_URL=your_supabase_project_url
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+
+
+Database tables are already set up on Supabase — no local setup needed. (If setting up a fresh Supabase project, run the SQL schema in `supabase/schema.sql` via the Supabase SQL Editor.)
+ 
 
 ```bash
 npm run dev
