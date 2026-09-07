@@ -39,7 +39,7 @@ export default function MealForm({ action }) {
           <textarea id='instructions' name='instructions' rows='10' />
         </p>
 
-        <ImagePicker />
+        <ImagePicker label="Image" name="image" />
 
         <div className={styles.actions}>
           <FormSubmit />

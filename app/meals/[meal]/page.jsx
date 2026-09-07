@@ -16,7 +16,7 @@ export default async function MealDetailsPost({ params }) {
   const { user } = await verifyAuth();
   const { meal: slug } = await params;
 
-  const meal = getMeal(slug, user?.id);
+  const meal = await getMeal(slug, user?.id);
 
   if (!meal) {
     notFound();
@@ -29,7 +29,7 @@ export default async function MealDetailsPost({ params }) {
   /* incrementViews(meal.id);
   meal.views += 1; // reflect the increment immediately without refetching
  */
-  const comments = getComments(meal.id);
+  const comments = await getComments(meal.id);
 
   meal.instructions = meal.instructions.replace(/\n/g, '<br />');
 

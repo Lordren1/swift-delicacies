@@ -33,6 +33,8 @@ export async function sharePost(prevState, formData) {
     creator_email: formData.get('email'),
   };
 
+  console.log('DEBUG image:', meal.image, 'size:', meal.image?.size, 'type:', typeof meal.image); // ADD THIS
+
   let errors = [];
 
   if (!meal.title || meal.title.trim().length === 0) {
@@ -105,7 +107,7 @@ export async function toggleMealLike(mealId) {
   }
 
 
-  toggleLike(mealId, user.id);
+  await toggleLike(mealId, user.id);
   revalidatePath('/');
   revalidatePath('/meals');
   revalidatePath(`/meals/[meal]`, 'page');
@@ -129,7 +131,7 @@ export async function postComment(prevState, formData) {
     return { error: 'Comment cannot be empty.' };
   }
 
-  addComment(mealId, user.id, xss(content), parentId);
+  await addComment(mealId, user.id, xss(content), parentId);
 
   revalidatePath('/meals/[meal]', 'page');
 
@@ -151,7 +153,7 @@ export async function editComment(prevState, formData) {
     return { error: 'Comment cannot be empty.', success: false };
   }
 
-  const result = updateComment(commentId, user.id, xss(content));
+  const result = await updateComment(commentId, user.id, xss(content));
 
   if (result.changes === 0) {
     return { error: 'You can only edit your own comments.', success: false };
@@ -171,7 +173,7 @@ export async function removeComment(commentId) {
   }
 
 
-  deleteComment(commentId, user.id);
+  await deleteComment(commentId, user.id);
   revalidatePath('/meals/[meal]', 'page');
 }
 
@@ -200,16 +202,16 @@ export async function signup(prevState, formData) {
     return { errors };
   }
 
-  if (getUserByUsername(username)) {
+  if (await getUserByUsername(username)) {
     return { errors: ['That username is already taken.'] };
   }
-  if (getUserByEmail(email)) {
+  if (await getUserByEmail(email)) {
     return { errors: ['An account with that email already exists.'] };
   }
 
   const passwordHash = await hashPassword(password);
 
-  const userId = createUser({
+  const userId = await createUser({
     username,
     email,
     password_hash: passwordHash,
@@ -230,7 +232,7 @@ export async function login(prevState, formData) {
     return { errors: ['Please enter both username and password.'] };
   }
 
-  const user = getUserByUsername(username);
+  const user = await getUserByUsername(username);
 
   if (!user || !user.password_hash) {
     return { errors: ['Invalid username or password.'] };
@@ -266,10 +268,10 @@ export async function updateProfile(prevState, formData) {
   const errors = [];
 
   if (!firstName || firstName.trim().length === 0) {
-    errors.push('Fist name is required');
+    errors.push('First name is required');
   }
 
-  if (!lastName || lastName.trim().lngth === 0) {
+  if (!lastName || lastName.trim().length === 0) {
     errors.push('Last name is required.');
   }
 
@@ -287,7 +289,7 @@ export async function updateProfile(prevState, formData) {
     }
   }
 
-  updateUserProfile(user.id, {
+  await updateUserProfile(user.id, {
     first_name: firstName,
     last_name: lastName,
     profile_image: imageUrl,
@@ -296,7 +298,7 @@ export async function updateProfile(prevState, formData) {
   revalidatePath('/profile');
   redirect("/profile?profileUpdated=1");
 
-  return { errors: null, success: true };
+  // return { errors: null, success: true };
 }
 
 
@@ -325,7 +327,7 @@ export async function changePassword(prevState, formData) {
     return { errors };
   }
 
-  const fullUser = getUserById(user.id);
+  const fullUser = await getUserById(user.id);
   const validCurrent = await verifyPassword(currentPassword, fullUser.password_hash);
 
   if (!validCurrent) {
@@ -333,11 +335,11 @@ export async function changePassword(prevState, formData) {
   }
 
   const newHash = await hashPassword(newpassword);
-  updateUserPassword(user.id, newHash);
+  await updateUserPassword(user.id, newHash);
 
   redirect('/profile?passwordChanged=1');
 
-  return { errors: null, success: true };
+  // return { errors: null, success: true };
 }
 
 
@@ -348,7 +350,7 @@ export async function deletePost(mealId) {
     return;
   }
 
-  deleteMeal(mealId, user.id);
+  await deleteMeal(mealId, user.id);
   revalidatePath('/');
   revalidatePath('/meals');
   revalidatePath('/profile');
@@ -391,7 +393,7 @@ export async function editPost(prevState, formData) {
     }
   }
 
-  const result = updateMeal(mealId, user.id, {
+  const result = await updateMeal(mealId, user.id, {
     title,
     summary,
     instructions: xss(instructions),

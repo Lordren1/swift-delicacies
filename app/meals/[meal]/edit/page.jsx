@@ -12,14 +12,14 @@ export default async function EditMealPage({ params }) {
   }
 
   const { meal: slug } = await params;
-  const meal = getMeal(slug, user.id);
+  const meal = await getMeal(slug, user.id);
 
   if (!meal) {
     notFound();
   }
 
   if (meal.user_id !== user.id) {
-    redirect('/profile?update=1');
+    redirect('/profile');
   }
 
   return <EditMealForm action={editPost} meal={meal} />;
