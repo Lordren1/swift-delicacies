@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { postComment } from "@/actions/post";
 import styles from './comment-form.module.css';
+import CommentList from "./comment-list";
 
 
 export default function CommentForm({ mealId }) {
@@ -14,7 +15,7 @@ export default function CommentForm({ mealId }) {
         <input type="hidden" name="mealId" value={mealId} />
         <textarea
           name="content"
-          row="3"
+          rows="3"
           placeholder="Share your thoughts..."
           className={styles.textarea}
         />
@@ -22,6 +23,8 @@ export default function CommentForm({ mealId }) {
           {pending ? 'Posting...' : 'Post Comment'}
         </button>
         {state.error && <p className={styles.error}>{state.error}</p>}
+
+
       </form>
     </>
   );

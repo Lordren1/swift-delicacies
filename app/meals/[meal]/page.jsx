@@ -94,15 +94,19 @@ export default async function MealDetailsPost({ params }) {
           dangerouslySetInnerHTML={{ __html: meal.instructions }}
         ></p>
 
-        <section id="comments" className={styles.comments}>
+        <section id="comments" className={styles.commentsSection}>
 
-          <CommentForm mealId={meal.id} />
-          <h2 className={styles.comment}>Comments</h2>
-          <CommentList
-            comments={comments}
-            mealId={meal.id}
-            currentUserId={user?.id}
-          />
+          
+
+          <div className={styles.commentsContainer}>
+            <CommentForm mealId={meal.id} />
+            <h2 className={styles.commentHeading}>Comments</h2>
+            <CommentList
+              comments={comments}
+              mealId={meal.id}
+              currentUserId={user?.id}
+            />
+          </div>
         </section>
       </main>
     </>
