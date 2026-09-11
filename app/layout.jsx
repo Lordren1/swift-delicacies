@@ -1,5 +1,6 @@
 import MainHeader from '@/components/main-header/main-header';
 import './globals.css';
+import { verifyAuth } from '@/lib/auth';
 
 
 export const metadata = {
@@ -7,12 +8,13 @@ export const metadata = {
   description: 'Delicious meals, shared by a food-loving community.',
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const {user} = await verifyAuth();
   return (
     <html lang="en">
       <body suppressHydrationWarning>
 
-        <MainHeader />
+        <MainHeader user={user}/>
         {children}
       </body>
     </html>

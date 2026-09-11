@@ -1,6 +1,8 @@
 .wrapper {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
 }
 
 .heading {
@@ -10,22 +12,24 @@
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #f9572a, #ffc905);
+  color: #ddd6cb;
+  /* background: linear-gradient(90deg, #f9572a, #ffc905); */
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ /*  -webkit-text-fill-color: transparent; */
   margin: 2rem auto 1rem auto;
 }
 
 .form {
   max-width: 28rem;
   width: 90%;
-  margin: 1rem auto 4rem auto;
+  margin: 0 auto 4rem ;
   padding: 2rem;
   border-radius: 0.75rem;
   background: linear-gradient(90deg, #2c1e19, #25200f);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
   color: #ddd6cb;
+  box-sizing: border-box;
 }
 
 .row {
@@ -51,6 +55,7 @@
 
 .control input {
   width: 100%;
+  box-sizing: border-box;
   padding: 0.65rem 0.85rem;
   border: 1px solid rgba(221, 214, 203, 0.2);
   border-radius: 0.5rem;
@@ -91,4 +96,62 @@
   border: 1px solid rgba(255, 60, 60, 0.3);
   color: #ff8b8b;
   list-style: none;
+}
+
+@media (max-width: 480px) {
+  .heading {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    
+    letter-spacing: 0.01rem;
+    text-transform: uppercase;
+    
+    margin: 4rem auto 1rem auto;
+  }
+
+  .form {
+    max-width: 20rem;
+    width: 90%;
+    margin: 0 auto 4rem ;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-sizing: border-box;
+  }
+
+  .row {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .control {
+    margin-bottom: 1.2rem;
+  }
+
+  .control label {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: #cfa69b;
+  }
+
+  .control input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.50rem 0.70rem;
+    border: 1px solid rgba(221, 214, 203, 0.2);
+    border-radius: 0.5rem;
+    background: rgba(221, 214, 203, 0.05);
+    color: #ddd6cb;
+    font-family: inherit;
+    font-size: 0.8rem;
+  }
+
+  .submit {
+    width: 100%;
+    padding: 0.6rem;
+    
+    margin-top: 0.3rem;
+  }
 }

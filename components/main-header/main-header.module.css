@@ -1,17 +1,27 @@
 .header {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 1rem;
-}
-
-.nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  padding: 2rem 1rem; */
+  
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
   display: flex;
-  gap: 1.5rem;
-  font-size: 1.25rem;
+  padding: 2rem 4rem;
+  box-sizing: border-box;
+  background-color: rgba(27, 21, 21, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); 
+  transition: all 0.3s ease;
+  color: #fff;
+  border-radius: 8rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+ 
 }
 
 .logo {
@@ -26,10 +36,71 @@
   letter-spacing: 0.15rem;
   text-transform: uppercase;
   font-size: 1.5rem;
+   margin-top: 10px;
+  padding: 0;
 }
 
+/* Burger button — hidden by default (desktop) */
+.desktopNav {
+  display: flex;
+  align-items: center;
+}
+
+
+ .desktopNav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.burger  {
+  display: none;
+  
+}
+
+.burger svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 990px) {
+  .desktopNav {
+    display: none;
+
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+
+
 /* components/main-header/main-header.module.css */
+
 .logoutBtn {
+  border: none;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin: 0;
+  color: #fff;
+  background: none;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.logoutBtn:hover {
+ /* color: hsl(0, 4%, 73%); */
+  color: #f9572a;
+}
+/* .logoutBtn {
   background: none;
   border: none;
   padding: 0;
@@ -40,40 +111,48 @@
   cursor: pointer;
   text-decoration: none;
   transition: color 0.2s ease;
-}
+} */
 
-.logoutBtn:hover {
+/* .logoutBtn:hover {
   color: #f9572a;
   text-decoration: underline;
 }
+ */
 
-@media (min-width: 768px) {
-  .header {
-    padding: 2rem 10%;
-  }
-}
 
-/* Mobile & Tablet */
-@media (max-width: 767px) {
+
+/* Mobile */
+@media (max-width: 425px) {
   .header {
-    flex-direction: column;
-    gap: 1.5rem;
+    justify-content: space-between;
+    display: flex;
     text-align: center;
+    padding: 1rem 5%;
+    width: 100%;
+    border-radius: 0;
   }
 
   .logo {
-    font-size: 1.25rem;
-    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
   }
 
-  .nav {
-    width: 100%;
+  .burger svg {
+  width: 15px;
+  height: 15px;
+}
+}
+
+
+
+ /*  Tablet */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 5%;
+
   }
 
-  .nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+  .logo {
     font-size: 1rem;
+     letter-spacing: 0.05rem;
   }
 }

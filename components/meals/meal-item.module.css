@@ -147,3 +147,11 @@
   font-weight: bold;
   color: #fff;
 }
+
+@media (max-width: 375px) {
+  .meals {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

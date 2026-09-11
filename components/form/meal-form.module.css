@@ -5,11 +5,12 @@
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #f9572a, #ffc905);
+  /* background: linear-gradient(90deg, #232221, #ffc905); */
+  color: #ddd6cb;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 2rem auto 1rem auto;
+ /*  -webkit-text-fill-color: transparent; */
+  margin: 4rem auto 1rem auto;
 }
 
 .form {
