@@ -5,15 +5,16 @@ import { usePathname } from "next/navigation";
 import styles from './nav-link.module.css'
 
 
-export default function NavLink({ href, children }) {
+export default function NavLink({ href, children, onClick }) {
   const path = usePathname();
 
   return (
     <>
       <Link
         href={href}
+        onClick={onClick}
         className={
-          path.startsWith(href)
+          path === href
             ? `${styles.link} ${styles.active}`
             : styles.link
         }

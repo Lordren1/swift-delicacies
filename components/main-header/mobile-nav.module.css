@@ -1,0 +1,159 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: min(320px, 85vw);
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  padding: 1.5rem;
+  animation: slideIn 0.3s ease forwards;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.closeBtn {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #f4f4f5;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: #e4e4e7;
+}
+
+.nav {
+  flex: 1;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li a {
+  display: block;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  color: #8f3a09;
+}
+
+.nav li a:hover {
+  background: #f8f8f8;
+  /* transform: translateX(4px); */
+  color: #8f3a09;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ececec;
+}
+
+.brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #8f3a09;
+}
+
+.loginBtn,
+.signupBtn,
+.logoutBtn {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logoutBtn {
+  background: #dc2626;
+  color: #fff;
+}
+
+.loginBtn {
+  background: #f4f4f5;
+  color: #18181b;
+}
+
+.signupBtn {
+  background: #8f3a09;
+  color: #fff;
+}
+
+.loginBtn:hover,
+.signupBtn:hover,
+.logoutBtn:hover {
+  opacity: 0.92;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 425px) {
+  .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: auto;
+}
+
+.loginBtn,
+.signupBtn,
+.logoutBtn {
+  width: 100%;
+  padding: 0.70rem 0.8rem;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.80rem;
+  font-weight: 500;
+}
+
+
+}

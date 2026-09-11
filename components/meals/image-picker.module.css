@@ -11,17 +11,21 @@
 
 .picker .button {
   border: 0;
-  padding: 0.5rem 1.5rem;
+  padding: 0.65rem 1.75rem;
   background: #a4abb9;
-  border-radius: 2px;
+  border-radius: 0.5rem;
   cursor: pointer;
   font: inherit;
+  font-weight: bold;
+  box-shadow: 0 4px 14px rgb(132, 137, 147);
 }
 
 .picker .button:hover,
 .picker .button:focus {
   background: #b3b9c6;
+  box-shadow: 0 6px 20px rgb(132, 137, 149);
 }
+
 
 .preview {
   width: 10rem;

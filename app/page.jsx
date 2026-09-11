@@ -24,23 +24,28 @@ export default function Home() {
   return (
     <>
       <header className={styles.header}>
-        <div>
-          <div className={styles.hero}>
-            <h1>
-              Swift Delicacies for Foodies
-            </h1>
+        <div className={styles.hero}>
+          <div className={styles.heroText}>
+            <h1>Swift Delicacies for Foodies</h1>
             <p>Taste & share food from Naija.</p>
+
+            <div className={styles.cta}>
+              <Link href="/meals" className={styles.primaryBtn}>
+                Explore Your Meals
+              </Link>
+              <Link href="/meals/share" className={styles.secondaryBtn}>
+                Share a Meal
+              </Link>
+            </div>
           </div>
 
-          <div className={styles.cta}>
-            <Link href='/meals'>Explore Your Meals</Link>
+          <div className={styles.heroImage}>
+            <ImageSlideshow />
           </div>
         </div>
       </header>
 
-      <div className={styles.slideshowWrapper}>
-        <ImageSlideshow />
-      </div>
+      
 
       <main>
         <section className={styles.section}>

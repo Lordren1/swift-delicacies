@@ -17,7 +17,7 @@ export default async function ProfilePage() {
     redirect('/login');
   }
 
-  const myMeals = getMealsByUser(user.id, user.id);
+  const myMeals = await getMealsByUser(user.id, user.id);
 
   return (
     <main className={styles.main}>
